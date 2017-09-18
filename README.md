@@ -1,0 +1,2 @@
+# String.StringExtensions
+String Extensions
