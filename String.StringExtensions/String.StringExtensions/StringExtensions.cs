@@ -17,7 +17,7 @@ namespace String.StringExtensions
         /// <returns></returns>
         public static bool isNullOrEmpty(this string value)
         {
-            return value == null || string.Empty.Equals(value);
+            return string.IsNullOrEmpty(value);
         }
 
         /// <summary>
