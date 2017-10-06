@@ -25,6 +25,16 @@ namespace String.StringExtensions
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
+        public static bool isNullOrWhiteSpace(this string value)
+        {
+            return string.IsNullOrWhiteSpace(value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool isMailAddress(this string value)
         {
             try
@@ -38,6 +48,8 @@ namespace String.StringExtensions
             }
 
         }
+
+
 
     }
 }

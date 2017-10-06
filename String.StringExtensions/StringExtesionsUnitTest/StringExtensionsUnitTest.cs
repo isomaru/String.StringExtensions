@@ -24,6 +24,25 @@ namespace StringExtesionsUnitTest
         }
 
         [TestMethod]
+        public void isNullOrWhiteSpaceTest()
+        {
+            Assert.AreEqual("".isNullOrWhiteSpace(), true);
+
+            string value = null;
+
+            Assert.AreEqual(value.isNullOrWhiteSpace(), true);
+
+            value = "           ";
+
+            Assert.AreEqual(value.isNullOrWhiteSpace(), true);
+
+            Assert.AreEqual("A".isNullOrWhiteSpace(), false);
+
+        }
+
+
+
+        [TestMethod]
         public void isMailAddressTest()
         {
             Assert.AreEqual("".isMailAddress(), false);
