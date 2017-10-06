@@ -49,7 +49,44 @@ namespace String.StringExtensions
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool containsNarrowString(this string value)
+        {
+            if (value == null)
+            {
+                throw new ArgumentException();
+            }
 
+            Encoding enc = Encoding.GetEncoding("Shift_JIS");
+
+            int stringBytes = enc.GetByteCount(value);
+
+            return stringBytes != value.Length * 2;
+
+        }
+
+        public static bool containsWideString(this string value)
+        {
+            if (value == null)
+            {
+                throw new ArgumentException();
+            }
+
+            if (value.isNullOrEmpty())
+            {
+                return false;
+            }
+
+            Encoding enc = Encoding.GetEncoding("Shift_JIS");
+
+            int stringBytes = enc.GetByteCount(value);
+
+            return stringBytes != value.Length;
+        }
 
     }
 }
